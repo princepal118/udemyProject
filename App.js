@@ -1,55 +1,23 @@
-import React, {useState} from 'react';
-
-import {
-  View,
-  // Text,
-  // TextInput,
-  StyleSheet,
-  // Button,
-  FlatList,
-} from 'react-native';
-import GoalInput from './components/GoalInput';
-import GoalItem from './components/GoalItem';
+import React from 'react';
+// import {StatusBar} from 'expo-status-bar';
+import {StyleSheet, View} from 'react-native';
+import CategoriesScreens from './screens/CategoriesScreens';
 
 const App = () => {
-  const [courseGoals, setCourseGoals] = useState([]);
-
-  const addGoalHandler = enteredGoalText => {
-    setCourseGoals(currentCoursesGoals => [
-      ...currentCoursesGoals,
-      {text: enteredGoalText, key: Math.random().toString()},
-    ]);
-  };
-
   return (
-    <View style={styles.appContainer}>
-      <GoalInput onAddGoal={addGoalHandler} />
-      <View style={styles.goalsContainer}>
-        <FlatList
-          style={styles.flatList}
-          data={courseGoals}
-          alwaysBounceVertical={true}
-          renderItem={itemData => {
-            return <GoalItem text={itemData.item.text} />;
-          }}
-          keyExtractor={item => {
-            return item.key;
-          }}
-        />
-      </View>
+    <View>
+      <CategoriesScreens />;
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  appContainer: {
-    flex: 1,
-    paddingTop: 50,
-    paddingHorizontal: 10,
-  },
+export default App;
 
-  goalsContainer: {
-    flex: 4,
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
-export default App;

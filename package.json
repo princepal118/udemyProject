@@ -2,6 +2,8 @@
   "name": "AwesomeProject",
   "version": "0.0.1",
   "private": true,
+  "orientatioon":"portrait",
+  "backgroundColor": "#24180f",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -10,6 +12,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "expo-status-bar": "^1.4.0",
     "react": "18.0.0",
     "react-native": "0.69.4"
   },
@@ -17,6 +20,8 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@types/react": "^18.0.17",
+    "@types/react-native": "^0.69.5",
     "babel-jest": "^26.6.3",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
